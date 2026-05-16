@@ -1,0 +1,193 @@
+====================================================================
+              HAMSTERLIN - INSTALLATION GUIDE FOR TERMUX
+====================================================================
+
+HamsterLin is a graphical desktop environment for Termux that mimics
+Linux Mint. Follow these steps to install it easily!
+
+====================================================================
+STEP 1: UPDATE TERMUX PACKAGES
+====================================================================
+
+First, update your Termux package manager:
+
+$ pkg update && pkg upgrade -y
+
+
+====================================================================
+STEP 2: INSTALL REQUIRED DEPENDENCIES
+====================================================================
+
+Install the essential packages needed for HamsterLin:
+
+$ pkg install -y python3 python3-pip git
+
+$ pkg install -y clang make libjpeg-turbo libpng freetype
+
+$ pkg install -y x11-repo
+
+$ pkg install -y xvfb virglrenderer tigervnc
+
+
+====================================================================
+STEP 3: INSTALL PYTHON DEPENDENCIES
+====================================================================
+
+HamsterLin requires PyQt5 and other Python libraries. Install them:
+
+$ pip install PyQt5
+
+$ pip install pyqt5-tools
+
+$ pip install pyside2
+
+$ pip install pillow
+
+$ pip install requests
+
+
+====================================================================
+STEP 4: CLONE THE HAMSTERLIN REPOSITORY
+====================================================================
+
+Clone the repository from GitHub:
+
+$ cd ~
+
+$ git clone https://github.com/johnminef8-debug/Termux-menu HamsterLin
+
+$ cd HamsterLin
+
+
+====================================================================
+STEP 5: RUN THE INSTALLATION SCRIPT
+====================================================================
+
+Make the install script executable and run it:
+
+$ chmod +x install.sh
+
+$ bash install.sh
+
+
+====================================================================
+STEP 6: LAUNCH HAMSTERLIN
+====================================================================
+
+After installation, you can launch HamsterLin with:
+
+$ python3 main.py
+
+Or using the command alias (if installation script created it):
+
+$ hamsterlin
+
+
+====================================================================
+TROUBLESHOOTING
+====================================================================
+
+If you encounter issues, try these steps:
+
+1. Make sure all dependencies are installed:
+   $ pip install -r requirements.txt
+
+2. If PyQt5 fails to install, try:
+   $ pip install --upgrade pip setuptools
+
+3. If X11 issues occur, ensure you have X11 server running:
+   $ vncserver :1
+
+4. For permission issues, run:
+   $ chmod -R 755 ~/HamsterLin
+
+
+====================================================================
+QUICK REFERENCE: ALL COMMANDS
+====================================================================
+
+# One-liner installation (run all commands sequentially):
+
+pkg update && pkg upgrade -y && \
+pkg install -y python3 python3-pip git clang make libjpeg-turbo libpng freetype x11-repo xvfb virglrenderer tigervnc && \
+pip install PyQt5 pyqt5-tools pyside2 pillow requests && \
+cd ~ && \
+git clone https://github.com/johnminef8-debug/Termux-menu HamsterLin && \
+cd HamsterLin && \
+chmod +x install.sh && \
+bash install.sh && \
+python3 main.py
+
+
+====================================================================
+SYSTEM REQUIREMENTS
+====================================================================
+
+Minimum Requirements:
+- Termux version 0.118 or higher
+- Android 7 or higher
+- At least 500MB free storage space
+- At least 2GB RAM recommended
+
+Recommended:
+- Android 10 or higher
+- 1GB+ free storage space
+- 4GB+ RAM
+
+
+====================================================================
+KEYBOARD SHORTCUTS
+====================================================================
+
+F1              - Open Application Menu
+Alt+F4          - Close HamsterLin
+F5              - Refresh Desktop
+Ctrl+Alt+T      - Open Terminal
+Ctrl+Alt+E      - Open File Explorer
+Super/Win Key   - Open Application Menu
+
+
+====================================================================
+FEATURES
+====================================================================
+
+✓ Graphical Desktop Interface
+✓ Linux Mint-style Application Menu
+✓ Terminal Emulator
+✓ File Explorer/Manager
+✓ Web Browser Integration
+✓ Settings Panel
+✓ System Tray with Clock
+✓ Multiple Themes (Dark, Light, Mint Green)
+✓ Application Taskbar
+✓ Window Management
+
+
+====================================================================
+SUPPORT & DOCUMENTATION
+====================================================================
+
+For more information, visit:
+https://github.com/johnminef8-debug/Termux-menu
+
+Issues & Bug Reports:
+https://github.com/johnminef8-debug/Termux-menu/issues
+
+
+====================================================================
+UNINSTALLATION
+====================================================================
+
+To remove HamsterLin:
+
+$ rm -rf ~/HamsterLin
+
+To remove all related packages (optional):
+
+$ pip uninstall PyQt5 pyqt5-tools pyside2 pillow requests -y
+
+
+====================================================================
+                    INSTALLATION COMPLETE!
+             Your HamsterLin is ready to use. Enjoy!
+====================================================================
